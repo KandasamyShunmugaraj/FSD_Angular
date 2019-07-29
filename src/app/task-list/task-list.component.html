@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Task List</h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>ParentTask</th>
+          <th>Priority</th>
+          <th>Start</th>
+          <th>End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of taskList">
+          <td>{{task.taskName}}</td>
+          <td>{{task.parentTaskName}}</td>
+          <td>{{task.priority}}</td>
+          <td>{{task.startDate}}</td>
+          <td>{{task.endDate}}</td>
+          <td><button
+           (click)="editUser(task.taskId)">EditTask</button>
+          </td>
+          <td><button  [disabled] ="task.endTask"
+           (click)="endTask(task.taskId)">EndTask</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
