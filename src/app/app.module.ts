@@ -8,12 +8,14 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
+import { GrdFilterPipe  } from './task-list/grd-filter-pipe';
 @NgModule({
   declarations: [
     AppComponent,
     CreateTaskComponent,
     TaskListComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    GrdFilterPipe 
   ],
   imports: [
     BrowserModule,

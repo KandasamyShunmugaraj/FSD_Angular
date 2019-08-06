@@ -11,6 +11,12 @@ import { Router } from '@angular/router';
 })
 export class TaskListComponent implements OnInit {
   employees: Observable<Task[]>;
+  searchText;
+   searchTaskName;
+    searchParentTask;
+    searchPriority;
+    searchStartDate;
+    searchEndDate;
 
   constructor(private taskService: TaskService,
     private router: Router) {}
@@ -27,6 +33,7 @@ export class TaskListComponent implements OnInit {
 
    const taskObservable = this.taskService.getAllTask();
         taskObservable.subscribe((taskData: Task[]) => {
+       // console.log(taskData);
         
             this.taskList = taskData;
         });
