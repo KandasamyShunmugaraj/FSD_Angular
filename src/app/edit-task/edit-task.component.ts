@@ -18,10 +18,10 @@ export class EditTaskComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router, private taskService: TaskService) { }
 
   ngOnInit() {
+  this.task = new Task();
     let editTaskId = window.localStorage.getItem("editTaskId");
     if(!editTaskId) {
-      alert("Invalid action.")
-      this.router.navigate(['app-task-list']);
+      alert("Invalid action.");
       return;
     }
 
@@ -42,7 +42,7 @@ export class EditTaskComponent implements OnInit {
         })
       });
 
-       console.log(this.task);
+      
 
       
   }
@@ -54,7 +54,7 @@ export class EditTaskComponent implements OnInit {
         data => {
           if(data.status === 200) {
             alert('User updated successfully.');
-            this.router.navigate(['app-task-list']);
+            this.router.navigate(['view']);
           }else {
             alert(data.message);
           }

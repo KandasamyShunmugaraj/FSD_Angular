@@ -25,7 +25,7 @@ export class TaskService {
   }
 
   endTask(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete/${id}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/update/${id}`, { responseType: 'text' });
   }
 
   getAllTask(): Observable<Task[]> {

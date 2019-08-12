@@ -23,14 +23,11 @@ export class CreateTaskComponent implements OnInit {
         });
   }
 
-  newTask(): void {
-    this.submitted = false;
-    this.task = new Task();
-  }
-
+  
   save() {
     this.taskService.createTask(this.task)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(
+      data => '', error => '');
     this.task = new Task();
   }
 
